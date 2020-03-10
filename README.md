@@ -1,4 +1,15 @@
 # pagination
+
+//procedure
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `v1_getPagination`(IN `p_limit` INT(11), IN `p_offset` INT(11))
+    NO SQL
+BEGIN
+SELECT First_name,Last_name,Customer_Street FROM customers WHERE 1 ORDER BY First_name ASC LIMIT p_limit,p_offset;
+END$$
+DELIMITER ;
+
+//end procedure
 v1_getPaginationAll 
 
 BEGIN
